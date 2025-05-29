@@ -1,16 +1,14 @@
 #!/bin/bash
 
-# Define the image name
-IMAGE_NAME="emirgenjac/snake-game:latest" # IMPORTANT: Change 'your-dockerhub-username'
+IMAGE_NAME="emirgenjac/snake-game:latest"
 LOCAL_CONTAINER_NAME="snake-game-local-test"
-LOCAL_PORT="8080" # Port to access locally for testing
+LOCAL_PORT="8080" 
 
 echo "--- Building Docker image: $IMAGE_NAME ---"
-# Build the Docker image
-# The '.' at the end means "build from the Dockerfile in the current directory"
+
 docker build -t "$IMAGE_NAME" .
 
-# Check if the build was successful
+
 if [ $? -ne 0 ]; then
     echo "ERROR: Docker image build failed. Please check the Dockerfile and logs above."
     exit 1
